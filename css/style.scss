@@ -2,11 +2,11 @@ header h1 {
   color: #555;
   font-size: 60px;
   text-align: center;
-  font-family: 'Mali', cursive; }
-
+  font-family: 'Mali', cursive;
+}
 .btn-wrapper {
-  text-align: center; }
-  .btn-wrapper button {
+  text-align: center;
+  button {
     background: transparent;
     border: 1px solid maroon;
     font-size: 20px;
@@ -15,16 +15,17 @@ header h1 {
     cursor: pointer;
     color: #555;
     outline: none;
-    font-family: 'Dekko', cursive; }
-
+    font-family: 'Dekko', cursive;
+  }
+}
 .main-div {
   text-align: center;
-  padding-top: 50px; }
-
+  padding-top: 50px;
+}
 .formDiv {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); }
-  .formDiv button {
+  grid-template-columns: repeat(2, 1fr);
+  button {
     background: transparent;
     border: 1px solid maroon;
     font-size: 20px;
@@ -33,33 +34,37 @@ header h1 {
     cursor: pointer;
     color: #555;
     outline: none;
-    font-family: 'Dekko', cursive; }
-  .formDiv form {
-    margin: 0 5px; }
-    .formDiv form label {
+    font-family: 'Dekko', cursive;
+  }
+  form {
+    margin: 0 5px;
+    label {
       font-size: 20px;
       color: crimson;
-      font-family: 'Delius Swash Caps', cursive; }
-
-input.user1-text, input.user2-text {
+      font-family: 'Delius Swash Caps', cursive;
+    }
+  }
+}
+input.user1-text, input.user2-text{
   height: 30px;
   font-size: 20px;
   outline: none;
   color: dimgrey;
-  font-family: 'Delius', cursive; }
-
+  font-family: 'Delius', cursive;
+}
 .user-data {
   text-align: center;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding-top: 20px; }
-  .user-data img {
+  padding-top: 20px;
+  img {
     width: 20%;
-    border-radius: 50%; }
-
+    border-radius: 50%;
+  }
+}
 .battle-wrapper {
-  grid-column: span 2; }
-  .battle-wrapper button {
+  grid-column: span 2;
+  button {
     background: transparent;
     border: 1px solid maroon;
     font-size: 20px;
@@ -68,16 +73,17 @@ input.user1-text, input.user2-text {
     cursor: pointer;
     color: #555;
     outline: none;
-    font-family: 'Dekko', cursive; }
-
+    font-family: 'Dekko', cursive;
+  }
+}
 .data-info {
   color: crimson;
-  font-family: 'Mali', cursive; }
+  font-family: 'Mali', cursive;
+}
 
 #winner {
   text-align: center;
   font-size: 25px;
   color: #666;
-  font-family: 'Delius Swash Caps', cursive; }
-
-/*# sourceMappingURL=style.css.map */
+  font-family: 'Delius Swash Caps', cursive;
+}

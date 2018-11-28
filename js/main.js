@@ -8,13 +8,15 @@ console.log(mainDiv);
 btn.addEventListener("click" ,function(e){
   let formDisplay = createForm();
   mainDiv.append(formDisplay);
-
+  btn.style.display = 'none';
   // User1 data
   let user1Text = document.querySelector('.user1-text');
   let user1Btn = document.querySelector('.user1-btn');
   user1Btn.addEventListener("click", function(e) {
     e.preventDefault();
-    var userData = fetch(`https://api.github.com/users/${user1Text.value}`).then(d => d.json()).then(data => displayUser1Id = data).then(displayUser1Data);
+    if (user1Text.value) {
+      var userData = fetch(`https://api.github.com/users/${user1Text.value}`).then(d => d.json()).then(data => displayUser1Id = data).then(displayUser1Data);
+    }
     user1Text.value = "";
     console.log(userData);
   })
@@ -24,7 +26,9 @@ btn.addEventListener("click" ,function(e){
   let user2Btn = document.querySelector('.user2-btn');
   user2Btn.addEventListener("click", function(e) {
     e.preventDefault();
-    var data = fetch(`https://api.github.com/users/${user2Text.value}`).then(d => d.json()).then(data => displayId = data).then(displayUser2Data);
+    if (user2Text.value) {
+      var data = fetch(`https://api.github.com/users/${user2Text.value}`).then(d => d.json()).then(data => displayId = data).then(displayUser2Data);
+    }
     user2Text.value = "";
   })
   
@@ -36,6 +40,7 @@ function displayUser1Data() {
   avatar.setAttribute('src', `${displayUser1Id.avatar_url}`);
   user1Data.appendChild(avatar);
   let gitData = document.createElement('div');
+  gitData.classList.add("data-info");
   gitData.innerText = `
     Name: ${displayUser1Id.name}
     Bio: ${displayUser1Id.bio}
@@ -52,6 +57,7 @@ function displayUser2Data() {
   avatar2.setAttribute('src', `${displayId.avatar_url}`);
   user2Data.appendChild(avatar2);
   let gitData2 = document.createElement('div');
+  gitData2.classList.add("data-info");
   gitData2.innerText = `
     Name: ${displayId.name}
     Bio: ${displayId.bio}
@@ -60,9 +66,12 @@ function displayUser2Data() {
     Repos: ${displayId.public_repos}
   `
   user2Data.appendChild(gitData2);
+  let battleWrapper = document.createElement('div');
+  battleWrapper.classList.add("battle-wrapper");
   let startBattle = document.createElement('button');
   startBattle.innerText = 'Start Battle';
-  mainWrapper.appendChild(startBattle);
+  battleWrapper.appendChild(startBattle);
+  mainWrapper.appendChild(battleWrapper);
   startBattle.addEventListener("click", battleFunc);
 }
 
